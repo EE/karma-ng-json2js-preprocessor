@@ -1,0 +1,30 @@
+{
+    "name": "karma-ng-json2js-preprocessor",
+    "version": "0.0.3",
+    "description": "A Karma plugin. Compile JSON files Angular values on the fly.",
+    "main": "./lib/index.js",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/EE/karma-ng-json2js-preprocessor.git"
+    },
+    "keywords": [
+        "karma-plugin",
+        "karma-preprocessor",
+        "angularjs",
+        "angular",
+        "json2js"
+    ],
+    "author": {
+        "name": "Michał Gołębiowski",
+        "email": "michal.golebiowski@laboratorium.ee",
+        "url": "http://laboratorium.ee"
+    },
+    "dependencies": {},
+    "devDependencies": {
+        "grunt": "~0.4.1"
+    },
+    "peerDependencies": {
+        "karma": "~0.9.5"
+    },
+    "license": "MIT"
+}
