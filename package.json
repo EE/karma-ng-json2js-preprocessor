@@ -1,6 +1,6 @@
 {
     "name": "karma-ng-json2js-preprocessor",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "A Karma plugin. Compile JSON files Angular values on the fly.",
     "main": "./lib/index.js",
     "repository": {
@@ -24,7 +24,7 @@
         "grunt": "~0.4.1"
     },
     "peerDependencies": {
-        "karma": "~0.9.5"
+        "karma": "~0.10.0"
     },
     "license": "MIT"
 }
