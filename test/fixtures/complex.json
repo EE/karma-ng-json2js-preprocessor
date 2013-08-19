@@ -1,0 +1,12 @@
+{
+    "field": "property",
+    "subObject": [
+        "arrayElem1",
+        "arrayElem2"
+    ],
+    "anotherSubObject": {
+        "subSubObject": {
+            "field": "property"
+        }
+    }
+}

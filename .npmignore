@@ -1,2 +1,8 @@
 .*
-test
+/test
+/Gruntfile.js
+/karma.conf.js
+/.jshintrc
+/.gitattributes
+/.gitignore
+/libpeerconnection.log

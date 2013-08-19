@@ -68,6 +68,12 @@ angular.module('data.json', []).value('data.json', {
 
 ----
 
+## Contributing
+
+Before sending a pull request, run `grunt` in terminal to make sure all tests pass. To continuously run tests
+during development, run `karma start`.
+
+
 For more information on Karma see the [homepage].
 
 
