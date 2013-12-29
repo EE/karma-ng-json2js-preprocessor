@@ -25,6 +25,8 @@ module.exports = function (config) {
         preprocessors: preprocessors,
 
         plugins: config.plugins.concat([
+            'karma-jasmine',
+            'karma-phantomjs-launcher',
 //            'karma-ng-json2js-preprocessor',
             require('./lib/index.js'),
         ]),
@@ -57,7 +59,7 @@ module.exports = function (config) {
         // - Safari (only Mac)
         // - PhantomJS
         // - IE (only Windows)
-        browsers: ['Chrome'],
+        browsers: ['PhantomJS'],
 
         // If browser does not capture in given timeout [ms], kill it
         captureTimeout: 5000,
