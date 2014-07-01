@@ -4,17 +4,7 @@
 
 ## Installation
 
-The easiest way is to keep `karma-ng-json2js-preprocessor` as a devDependency in your `package.json`.
-```json
-{
-  "devDependencies": {
-    "karma": "~0.10.9",
-    "karma-ng-json2js-preprocessor": "~0.0.5"
-  }
-}
-```
-
-You can simple do it by:
+The easiest way is to keep `karma-ng-json2js-preprocessor` as a devDependency in your `package.json`. You can simple do it by:
 ```bash
 npm install karma-ng-json2js-preprocessor --save-dev
 ```
@@ -56,8 +46,7 @@ module.exports = function(config) {
 
 ## How does it work ?
 
-This preprocessor converts JSON files into Angular values and puts them in separate Angular modules; each named the same
-as the source JSON file and generates Angular modules.
+This preprocessor converts JSON files into Angular values and puts them in separate Angular modules; each named the same as the source JSON file and generates Angular modules.
 
 For instance this `test/fixture/data.json`  ...
 ```json
@@ -94,8 +83,7 @@ describe('me', function(){
 
 ## Contributing
 
-Before sending a pull request, run `grunt` in terminal to make sure all tests pass. To continuously run tests
-during development, run `karma start`.
+Before sending a pull request, run `grunt` in terminal to make sure all tests pass. To continuously run tests during development, run `karma start`.
 
 
 For more information on Karma see the [homepage].
