@@ -1,4 +1,4 @@
-# karma-ng-json2js-preprocessor
+# karma-ng-json2js-preprocessor [![Build Status](https://travis-ci.org/EE/karma-ng-json2js-preprocessor.svg?branch=master)](https://travis-ci.org/EE/karma-ng-json2js-preprocessor)
 
 > Preprocessor for converting JSON files to [AngularJS](http://angularjs.org/) values.
 
