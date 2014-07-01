@@ -23,13 +23,13 @@ describe('json2j preprocessor', function () {
             field: 'property',
             subObject: [
                 'arrayElem1',
-                'arrayElem2'
+                'arrayElem2',
             ],
             anotherSubObject: {
                 subSubObject: {
-                    field: 'property'
-                }
-            }
+                    field: 'property',
+                },
+            },
         });
     });
 });
