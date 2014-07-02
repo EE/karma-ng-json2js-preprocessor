@@ -44,6 +44,7 @@ module.exports = function(config) {
       filterContent: function(content, valueName) {
         return content.replace(/SOME_CONTENT/, '');
       }
+      */
     }
   });
 };
