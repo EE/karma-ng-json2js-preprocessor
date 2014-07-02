@@ -37,8 +37,13 @@ module.exports = function(config) {
       /* or define a custom transform function
       cacheIdFromPath: function(filepath) {
         return cacheId;
-      }
+      },
       */
+
+      /* or define a preprocessor
+      filterContent: function(content, valueName) {
+        return content.replace(/SOME_CONTENT/, '');
+      }
     }
   });
 };
