@@ -1,6 +1,6 @@
 {
     "name": "karma-ng-json2js-preprocessor",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "A Karma plugin. Compile JSON files to Angular values on the fly.",
     "main": "./lib/index.js",
     "repository": {
@@ -19,7 +19,9 @@
         "email": "michal.golebiowski@laboratorium.ee",
         "url": "http://laboratorium.ee"
     },
-    "dependencies": {},
+    "files": [
+        "lib"
+    ],
     "devDependencies": {
         "grunt": "0.4.5",
         "grunt-cli": "0.1.13",
