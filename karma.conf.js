@@ -3,7 +3,7 @@
 module.exports = function (config) {
     var preprocessors = config.preprocessors;
     // put JSON data into a mock
-    preprocessors['**/*.json'] = 'json2js';
+    preprocessors['**/*.json'] = 'ng-json2js';
 
     config.set({
         frameworks: ['jasmine'],
@@ -16,7 +16,7 @@ module.exports = function (config) {
             'test/vendor/angular.js',
             'test/vendor/angular-mocks.js',
             'test/fixtures/*.json',
-            'test/json2js.spec.js',
+            'test/ng-json2js.spec.js',
         ],
 
         // list of files to exclude
