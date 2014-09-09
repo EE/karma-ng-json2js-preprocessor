@@ -1,48 +1,48 @@
 {
-    "name": "karma-ng-json2js-preprocessor",
-    "version": "0.1.1",
-    "description": "A Karma plugin. Compile JSON files to Angular values on the fly.",
-    "main": "./lib/index.js",
-    "repository": {
-        "type": "git",
-        "url": "git://github.com/EE/karma-ng-json2js-preprocessor.git"
-    },
-    "keywords": [
-        "karma-plugin",
-        "karma-preprocessor",
-        "angularjs",
-        "angular",
-        "json2js"
-    ],
-    "author": {
-        "name": "Michał Gołębiowski",
-        "email": "michal.golebiowski@laboratorium.ee",
-        "url": "http://laboratorium.ee"
-    },
-    "files": [
-        "lib"
-    ],
-    "devDependencies": {
-        "grunt": "0.4.5",
-        "grunt-cli": "0.1.13",
-        "grunt-ddescribe-iit": "0.0.4",
-        "grunt-eslint": "0.5.0",
-        "grunt-jscs": "0.6.1",
-        "grunt-jsonlint": "1.0.4",
-        "grunt-karma": "0.8.3",
-        "grunt-merge-conflict": "0.0.2",
-        "jscs-trailing-comma": "0.3.0",
-        "karma": "0.12.16",
-        "karma-jasmine": "0.1.5",
-        "karma-phantomjs-launcher": "0.1.4",
-        "load-grunt-tasks": "0.6.0",
-        "time-grunt": "0.3.2"
-    },
-    "peerDependencies": {
-        "karma": ">=0.10.0 <0.13.0"
-    },
-    "scripts": {
-        "test": "grunt"
-    },
-    "license": "MIT"
+  "name": "karma-ng-json2js-preprocessor",
+  "version": "0.1.1",
+  "description": "A Karma plugin. Compile JSON files to Angular values on the fly.",
+  "main": "./lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/EE/karma-ng-json2js-preprocessor.git"
+  },
+  "keywords": [
+    "karma-plugin",
+    "karma-preprocessor",
+    "angularjs",
+    "angular",
+    "json2js"
+  ],
+  "author": {
+    "name": "Michał Gołębiowski",
+    "email": "michal.golebiowski@laboratorium.ee",
+    "url": "http://laboratorium.ee"
+  },
+  "files": [
+    "lib"
+  ],
+  "devDependencies": {
+    "grunt": "0.4.5",
+    "grunt-cli": "0.1.13",
+    "grunt-ddescribe-iit": "0.0.4",
+    "grunt-eslint": "0.5.0",
+    "grunt-jscs": "0.6.1",
+    "grunt-jsonlint": "1.0.4",
+    "grunt-karma": "0.8.3",
+    "grunt-merge-conflict": "0.0.2",
+    "jscs-trailing-comma": "0.3.0",
+    "karma": "0.12.16",
+    "karma-jasmine": "0.1.5",
+    "karma-phantomjs-launcher": "0.1.4",
+    "load-grunt-tasks": "0.6.0",
+    "time-grunt": "0.3.2"
+  },
+  "peerDependencies": {
+    "karma": ">=0.10.0 <0.13.0"
+  },
+  "scripts": {
+    "test": "grunt"
+  },
+  "license": "MIT"
 }
