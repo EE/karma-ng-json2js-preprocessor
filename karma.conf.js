@@ -25,8 +25,6 @@ module.exports = function (config) {
         preprocessors: preprocessors,
 
         plugins: config.plugins.concat([
-            'karma-phantomjs-launcher',
-//            'karma-ng-json2js-preprocessor',
             require('./lib/index.js'),
         ]),
 
