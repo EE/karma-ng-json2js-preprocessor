@@ -16,7 +16,7 @@ module.exports = function(config) {
   config.set({
     preprocessors: {
       '**/*.html': ['ng-html2js'],
-      '**/*.json': ['json2js']
+      '**/*.json': ['ng-json2js']
     },
 
     plugins: [

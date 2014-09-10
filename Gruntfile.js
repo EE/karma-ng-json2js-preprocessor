@@ -5,7 +5,7 @@ module.exports = function (grunt) {
 
     grunt.initConfig({
         'ddescribe-iit': {
-            files: ['test/json2js.spec.js'],
+            files: ['test/ng-json2js.spec.js'],
         },
 
         eslint: {
