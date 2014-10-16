@@ -56,7 +56,7 @@ For instance this `test/fixture/data.json`  ...
 ```
 ... with the configuration given above will be converted into:
 ```js
-angular.module('served/data.json', []).value('servedData', {
+angular.module('served/data.json', []).constant('servedData', {
     prop: 'val'
 });
 ```
