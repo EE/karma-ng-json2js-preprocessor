@@ -1,6 +1,6 @@
 # karma-ng-json2js-preprocessor [![Build Status](https://travis-ci.org/EE/karma-ng-json2js-preprocessor.svg?branch=master)](https://travis-ci.org/EE/karma-ng-json2js-preprocessor)
 
-> Preprocessor for converting JSON files to [AngularJS](http://angularjs.org/) values.
+> Preprocessor for converting JSON files to [AngularJS](http://angularjs.org/) constants.
 
 ## Installation
 
@@ -46,7 +46,7 @@ module.exports = function(config) {
 
 ## How does it work ?
 
-This preprocessor converts JSON files into Angular values and puts them in separate Angular modules; each named the same as the source JSON file and generates Angular modules.
+This preprocessor converts JSON files into Angular constants and puts them in separate Angular modules; each named the same as the source JSON file and generates Angular modules.
 
 For instance this `test/fixture/data.json`  ...
 ```json
