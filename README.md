@@ -24,7 +24,7 @@ module.exports = function(config) {
     ],
 
     files: [
-      'test/fixture/*.js',
+      'test/fixture/*.json',
       '*.html'
     ],
 
