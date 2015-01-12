@@ -28,7 +28,6 @@ module.exports = function (config) {
 
         plugins: config.plugins.concat([
             require('./lib/index.js'),
-            'karma-requirejs',
         ]),
 
         // test results reporter to use
