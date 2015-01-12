@@ -5,7 +5,7 @@ module.exports = function (grunt) {
 
     grunt.initConfig({
         'ddescribe-iit': {
-            files: ['test/ng-json2js.spec.js'],
+            files: ['test/*.spec.js'],
         },
 
         eslint: {
@@ -45,6 +45,10 @@ module.exports = function (grunt) {
                 configFile: 'karma.conf.js',
                 singleRun: true,
             },
+            requirejs: {
+                configFile: 'karma.requirejs.conf.js',
+                singleRun: true,
+            },
         },
 
         'merge-conflict': {
@@ -73,6 +77,7 @@ module.exports = function (grunt) {
         'lint',
         'commitChecks',
         'karma:unit',
+        'karma:requirejs',
     ]);
 
     grunt.registerTask('default', ['test']);

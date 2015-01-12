@@ -6,17 +6,19 @@ module.exports = function (config) {
     preprocessors['**/*.json'] = 'ng-json2js';
 
     config.set({
-        frameworks: ['jasmine'],
+        frameworks: ['jasmine', 'requirejs'],
 
         // base path, that will be used to resolve files and exclude
         basePath: '',
 
         // list of files / patterns to load in the browser
         files: [
-            'test/vendor/angular.js',
-            'test/vendor/angular-mocks.js',
-            'test/fixtures/*.json',
-            'test/ng-json2js.spec.js',
+            'test/main-test.js',
+            {pattern: 'test/vendor/angular.js', included: false},
+            {pattern: 'test/vendor/angular-mocks.js', included: false},
+            {pattern: 'test/fixtures/*.json', included: false},
+            {pattern: 'test/ng-json2js.requirejs.spec.js', included: false},
+            {pattern: 'karma.requirejs.conf.js', included: false, served: false},
         ],
 
         // list of files to exclude
