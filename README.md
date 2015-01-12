@@ -55,21 +55,21 @@ For instance this `test/fixture/data.json`  ...
 }
 ```
 ... with the configuration given above will be converted into:
-
-	'use strict'
-	function servedDataFunction (angular) {
-	  angular.module('served/data.json', []).constant('servedData', {
-	  	prop: 'val'
-	  });
-	}
-	if (typeof define === 'function' && define.amd) {
-	  define(['angular'], function (angular) {
-	    servedDataFunction(angular);  
-	  });
-	} else {
-	  servedDataFunction(angular);
-	}
-
+```js
+'use strict'
+function servedDataFunction (angular) {
+  angular.module('served/data.json', []).constant('servedData', {
+    prop: 'val'
+  });
+}
+if (typeof define === 'function' && define.amd) {
+  define(['angular'], function (angular) {
+    servedDataFunction(angular);
+  });
+} else {
+  servedDataFunction(angular);
+}
+```
 Inject json fixture into your test case:
 ```js
 describe('me', function(){
