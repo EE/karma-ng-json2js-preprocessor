@@ -63,7 +63,7 @@ function servedDataFunction (angular) {
   });
 }
 if (typeof define === 'function' && define.amd) {
-  define(['angular'], function (angular) {
+  require(['angular'], function (angular) {
     servedDataFunction(angular);
   });
 } else {
