@@ -1,0 +1,12 @@
+#!/usr/bin/env node
+
+var spawn = require('win-spawn');
+
+if (process.env.TRAVIS) {
+    spawn('npm', ['install', 'karma-phantomjs-launcher@0.1.4'], {stdio: 'inherit'})
+        .on('close', function (code) {
+            if (code !== 0) {
+                throw new Error('Couldn\'t install karma-phantomjs-launcher');
+            }
+        });
+}
