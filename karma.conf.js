@@ -1,11 +1,42 @@
 'use strict';
 
+var _ = require('lodash');
+
 module.exports = function (config) {
     var preprocessors = config.preprocessors;
     // put JSON data into a mock
     preprocessors['**/*.json'] = 'ng-json2js';
 
-    config.set({
+    var customLaunchers = {
+        SL_Chrome: {
+            base: 'SauceLabs',
+            browserName: 'chrome',
+            version: '39',
+        },
+        SL_Firefox: {
+            base: 'SauceLabs',
+            browserName: 'firefox',
+            version: '34',
+        },
+        SL_Safari: {
+            base: 'SauceLabs',
+            browserName: 'safari',
+            version: '8',
+        },
+        SL_IE_11: {
+            base: 'SauceLabs',
+            browserName: 'internet explorer',
+            version: '11',
+        },
+        SL_IE_9: {
+            base: 'SauceLabs',
+            browserName: 'internet explorer',
+            version: '9',
+        },
+    };
+
+
+    var settings = {
         frameworks: ['jasmine'],
 
         // base path, that will be used to resolve files and exclude
@@ -30,7 +61,7 @@ module.exports = function (config) {
 
         // test results reporter to use
         // possible values: dots || progress || growl
-        reporters: ['progress'],
+        reporters: process.env.TRAVIS ? ['dots', 'saucelabs'] : ['progress'],
 
         // web server port
         port: 8080,
@@ -48,6 +79,8 @@ module.exports = function (config) {
         // enable / disable watching file and executing tests whenever any file changes
         autoWatch: true,
 
+        customLaunchers: customLaunchers,
+
         // Start these browsers, currently available:
         // - Chrome
         // - ChromeCanary
@@ -56,7 +89,7 @@ module.exports = function (config) {
         // - Safari (only Mac)
         // - PhantomJS
         // - IE (only Windows)
-        browsers: [process.env.TRAVIS ? 'PhantomJS' : 'Firefox'],
+        browsers: process.env.TRAVIS ? Object.keys(customLaunchers) : ['Chrome'],
 
         // If browser does not capture in given timeout [ms], kill it
         captureTimeout: 5000,
@@ -64,5 +97,22 @@ module.exports = function (config) {
         // Continuous Integration mode
         // if true, it capture browsers, run tests and exit
         singleRun: false,
-    });
+    };
+
+    if (process.env.TRAVIS) {
+        _.assign(settings, {
+            browserDisconnectTimeout: 3e5,
+            browserDisconnectTolerance: 5,
+            browserNoActivityTimeout: 3e5,
+            captureTimeout: 3e5,
+
+            sauceLabs: {
+                testName: require('./package.json').name,
+                startConnect: true,
+                tunnelIdentifier: process.env.TRAVIS_JOB_NUMBER,
+            },
+        });
+    }
+
+    config.set(settings);
 };

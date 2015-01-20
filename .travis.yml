@@ -1,9 +1,18 @@
 language: node_js
+
 sudo: false
+
 node_js:
   - '0.10'
+
+env:
+  global:
+    - secure: AzBcmduk3X7C/ld16Cjxq5jzwt1a12uXKETdawcFvN5xoF94MJRtBDxzkYRDyujtIA1rBYJc/nCnjrHC19RyFs9WA1PszcmeJdTiI7wtDMqsXzxMIVNqeNxN15rwFV/HTQnjT3E+4UFL88hMemlfw5yWx7uKNhSPtyDMXb03keI=
+    - secure: dTkMt4Dkmg8ufTk1LSpfDOv2QV3z8zYhU5M/e0TLKgnMvoh9BUfPh2CguxTqwY0FO9KkCEFvXY5zuo531UvtSZYDH9hD2g+CmLAHVAZqwqpB4R0jZVJSd9qASqfgFd1o2zPSa4X9UYb09veg1dqzfeeTy2EmBlW/NWK9bffU224=
+
 before_install:
   # Log HTTP requests
   - npm config set loglevel http
+
 install:
   - time npm install
