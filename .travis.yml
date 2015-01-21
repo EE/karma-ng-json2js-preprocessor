@@ -7,8 +7,8 @@ node_js:
 
 env:
   global:
-    - secure: AzBcmduk3X7C/ld16Cjxq5jzwt1a12uXKETdawcFvN5xoF94MJRtBDxzkYRDyujtIA1rBYJc/nCnjrHC19RyFs9WA1PszcmeJdTiI7wtDMqsXzxMIVNqeNxN15rwFV/HTQnjT3E+4UFL88hMemlfw5yWx7uKNhSPtyDMXb03keI=
-    - secure: dTkMt4Dkmg8ufTk1LSpfDOv2QV3z8zYhU5M/e0TLKgnMvoh9BUfPh2CguxTqwY0FO9KkCEFvXY5zuo531UvtSZYDH9hD2g+CmLAHVAZqwqpB4R0jZVJSd9qASqfgFd1o2zPSa4X9UYb09veg1dqzfeeTy2EmBlW/NWK9bffU224=
+    - secure: G3az2JJAvaaR1W5qekB8RFPjIc+yQqkyRdJ+A4uGaS93K0vEqxEhET51TanADtwFYnf6DaPsoSKjG7gWxglsGjgDCqh8D+RD/F8TzDhbafJVui+oPEo1jx8TtBMDl8qBn6v3OMAN5YbB2eEW93IPb0eET8V7xPLdA4Ohu5iXdeI=
+    - secure: NDVS5+wa7JqEvstCMWOSy23viZK6hI3LJWw4E11OzR2Cav/TOSaGXSrUVawg4xxx8YfBnxGgdlNdQZYGpotnH47dEsGASOiWcxXeCAScUDnAdNRtcRUf/PY0BdCSnwNvU/uqFLEA1SNX95NwrEY88Z+II9ebYiHSyMzeymMaLKI=
 
 before_install:
   # Log HTTP requests
