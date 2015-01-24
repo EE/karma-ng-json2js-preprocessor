@@ -52,7 +52,7 @@ This preprocessor converts JSON files into Angular constants and puts them in se
 For instance this `test/fixture/data.json`  ...
 ```json
 {
-    prop: val
+    "prop": "val"
 }
 ```
 ... with the configuration given above will be converted into:
