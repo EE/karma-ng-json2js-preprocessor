@@ -24,8 +24,9 @@ module.exports = function(config) {
     ],
 
     files: [
-      'test/fixture/*.json',
-      '*.html'
+      'app/**/*.js',         // application files
+      'test/fixture/*.json', // JSON fixtures
+      'test/spec/*.js',      // test files
     ],
 
     ngJson2JsPreprocessor: {
