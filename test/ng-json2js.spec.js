@@ -1,5 +1,5 @@
 /* global angular */
-describe('json2j preprocessor', function () {
+describe('ng-json2js preprocessor', function () {
     'use strict';
 
     beforeEach(module('test/fixtures/empty.json'));
