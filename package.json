@@ -25,25 +25,25 @@
   "devDependencies": {
     "grunt": "0.4.5",
     "grunt-cli": "0.1.13",
-    "grunt-ddescribe-iit": "0.0.4",
-    "grunt-eslint": "5.1.0",
-    "grunt-jscs": "0.8.1",
+    "grunt-ddescribe-iit": "0.0.6",
+    "grunt-eslint": "16.0.0",
+    "grunt-jscs": "1.8.0",
     "grunt-jsonlint": "1.0.4",
-    "grunt-karma": "0.10.1",
+    "grunt-karma": "0.12.0",
     "grunt-merge-conflict": "0.0.2",
-    "jasmine-core": "2.2.0",
-    "jscs-trailing-comma": "0.3.0",
-    "karma": "0.12.31",
-    "karma-chrome-launcher": "0.1.7",
-    "karma-jasmine": "0.3.5",
-    "karma-sauce-launcher": "0.2.10",
-    "load-grunt-tasks": "3.1.0",
-    "lodash": "3.1.0",
-    "time-grunt": "1.0.0",
+    "jasmine-core": "2.3.4",
+    "jscs-trailing-comma": "0.4.2",
+    "karma": "0.13.2",
+    "karma-chrome-launcher": "0.2.0",
+    "karma-jasmine": "0.3.6",
+    "karma-sauce-launcher": "0.2.14",
+    "load-grunt-tasks": "3.2.0",
+    "lodash": "3.10.0",
+    "time-grunt": "1.2.1",
     "win-spawn": "2.0.0"
   },
   "peerDependencies": {
-    "karma": ">=0.10.0 <0.13.0"
+    "karma": ">=0.10.0"
   },
   "scripts": {
     "test": "grunt"
