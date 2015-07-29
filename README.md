@@ -80,6 +80,21 @@ describe('me', function(){
 });
 ```
 
+## Browser support
+
+This package is tested against the following browsers:
+
+* Latest Firefox, Chrome, Edge & Safari
+* IE 9-11
+* Android 4.1+
+* iOS: latest two versions
+
+Other browsers and versions might work but there's no guarantee.
+
+Automated tests are possible due to the courtesy of [BrowserStack](https://www.browserstack.com).
+
+![BrowserStack icon](https://rawgithub.com/EE/karma-ng-json2js-preprocessor/master/browserstack-logo.svg)
+
 ----
 
 ## Contributing

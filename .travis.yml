@@ -7,12 +7,15 @@ node_js:
 
 env:
   global:
-    - secure: G3az2JJAvaaR1W5qekB8RFPjIc+yQqkyRdJ+A4uGaS93K0vEqxEhET51TanADtwFYnf6DaPsoSKjG7gWxglsGjgDCqh8D+RD/F8TzDhbafJVui+oPEo1jx8TtBMDl8qBn6v3OMAN5YbB2eEW93IPb0eET8V7xPLdA4Ohu5iXdeI=
-    - secure: NDVS5+wa7JqEvstCMWOSy23viZK6hI3LJWw4E11OzR2Cav/TOSaGXSrUVawg4xxx8YfBnxGgdlNdQZYGpotnH47dEsGASOiWcxXeCAScUDnAdNRtcRUf/PY0BdCSnwNvU/uqFLEA1SNX95NwrEY88Z+II9ebYiHSyMzeymMaLKI=
+    - secure: NyTJRyVlZACJzp4rU6O9abqm2Z+P3x6mhFne8B9iqflt+9pesdT9Jz/a5oi8+hjA1n+tRADkrXjGz8GPgFCI1YP6+RgOQjGYnf3F/7/efbHjGrtTQPKq6Fu07upN9B/yXEsFML05abloiJvPLeHvDS9xY9qsgkDzvikdjrUleIs=
+    - secure: di2dAKlPdcQ2yNo7YMIdqJbfk4KhYknh6g0pGF0i53tszFoBRVyAGb1uI7ZlrHIBOnOSi5XnLuoocEKscAToZjAANXYIcIxV29lXADkrDXXDqSaXWuvtGPadFRxeAuk07VEukj6xNEr/eSAuGyRb9K4HURSmEvWlUMMTMGOIB4Y=
 
 before_install:
   # Log HTTP requests
   - npm config set loglevel http
+  # Set up xvfb for headless Firefox testing
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
 
 install:
   - time npm install

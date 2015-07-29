@@ -8,30 +8,104 @@ module.exports = function (config) {
     preprocessors['**/*.json'] = 'ng-json2js';
 
     var customLaunchers = {
-        SL_Chrome: {
-            base: 'SauceLabs',
-            browserName: 'chrome',
-            version: '43',
+        BS_Chrome: {
+            base: 'BrowserStack',
+            browser: 'chrome',
+            browser_version: '44.0',
+            os: 'Windows',
+            os_version: '8.1',
         },
-        SL_Firefox: {
-            base: 'SauceLabs',
-            browserName: 'firefox',
-            version: '39',
+        BS_Firefox: {
+            base: 'BrowserStack',
+            browser: 'firefox',
+            browser_version: '39.0',
+            os: 'Windows',
+            os_version: '8.1',
         },
-        SL_Safari: {
-            base: 'SauceLabs',
-            browserName: 'safari',
-            version: '8',
+        BS_Safari: {
+            base: 'BrowserStack',
+            browser: 'safari',
+            browser_version: '8.0',
+            os: 'OS X',
+            os_version: 'Yosemite',
         },
-        SL_IE_11: {
-            base: 'SauceLabs',
-            browserName: 'internet explorer',
-            version: '11',
+        BS_IE_9: {
+            base: 'BrowserStack',
+            browser: 'ie',
+            browser_version: '9.0',
+            os: 'Windows',
+            os_version: '7',
         },
-        SL_IE_9: {
-            base: 'SauceLabs',
-            browserName: 'internet explorer',
-            version: '9',
+        BS_IE_10: {
+            base: 'BrowserStack',
+            browser: 'ie',
+            browser_version: '10.0',
+            os: 'Windows',
+            os_version: '7',
+        },
+        BS_IE_11: {
+            base: 'BrowserStack',
+            browser: 'ie',
+            browser_version: '11.0',
+            os: 'Windows',
+            os_version: '8.1',
+        },
+        BS_Edge: {
+            base: 'BrowserStack',
+            browser: 'edge',
+            browser_version: '0.11',
+            os: 'Windows',
+            os_version: '10',
+        },
+        BS_iOS_7: {
+            base: 'BrowserStack',
+            device: 'iPhone 5S',
+            os: 'ios',
+            os_version: '7.0',
+            real_mobile: 'false',
+        },
+        BS_iOS_8: {
+            base: 'BrowserStack',
+            device: 'iPhone 6',
+            os: 'ios',
+            os_version: '8.3',
+            real_mobile: 'false',
+        },
+        BS_Android_4_1: {
+            base: 'BrowserStack',
+            browser: 'Android Browser',
+            os: 'android',
+            os_version: '4.1',
+            real_mobile: 'false',
+        },
+        BS_Android_4_2: {
+            base: 'BrowserStack',
+            browser: 'Android Browser',
+            os: 'android',
+            os_version: '4.2',
+            real_mobile: 'false',
+        },
+        BS_Android_4_3: {
+            base: 'BrowserStack',
+            browser: 'Android Browser',
+            os: 'android',
+            os_version: '4.3',
+            real_mobile: 'false',
+        },
+        BS_Android_5_0: {
+            base: 'BrowserStack',
+            browser: 'Android Browser',
+            os: 'android',
+            os_version: '4.4',
+            real_mobile: 'false',
+        },
+        BS_Windows_Phone: {
+            base: 'BrowserStack',
+            browser: 'IE Mobile',
+            device: 'Nokia Lumia 630',
+            os: 'winphone',
+            os_version: '8.1',
+            real_mobile: 'false',
         },
     };
 
@@ -61,7 +135,7 @@ module.exports = function (config) {
 
         // test results reporter to use
         // possible values: dots || progress || growl
-        reporters: process.env.TRAVIS ? ['dots', 'saucelabs'] : ['progress'],
+        reporters: process.env.TRAVIS ? 'dots' : 'progress',
 
         // web server port
         port: 8080,
@@ -85,11 +159,18 @@ module.exports = function (config) {
         // - Chrome
         // - ChromeCanary
         // - Firefox
+        // - FirefoxDeveloperEdition
+        // - FirefoxNightly
         // - Opera
         // - Safari (only Mac)
         // - PhantomJS
         // - IE (only Windows)
-        browsers: process.env.TRAVIS ? Object.keys(customLaunchers) : ['Chrome'],
+        //
+        // Travis has headless Firefox so use Firefox here - it will work locally
+        // as well as for pull requests from other remotes.
+        browsers: process.env.TRAVIS && process.env.BROWSER_STACK_USERNAME && process.env.BROWSER_STACK_ACCESS_KEY ?
+            Object.keys(customLaunchers) :
+            ['Firefox'],
 
         // If browser does not capture in given timeout [ms], kill it
         captureTimeout: 5000,
@@ -101,15 +182,24 @@ module.exports = function (config) {
 
     if (process.env.TRAVIS) {
         _.assign(settings, {
-            browserDisconnectTimeout: 3e5,
-            browserDisconnectTolerance: 5,
-            browserNoActivityTimeout: 3e5,
+            browserDisconnectTimeout: 1e4,
+            browserDisconnectTolerance: 3,
+            browserNoActivityTimeout: 2e4,
             captureTimeout: 3e5,
 
-            sauceLabs: {
-                testName: require('./package.json').name,
-                startConnect: true,
-                tunnelIdentifier: process.env.TRAVIS_JOB_NUMBER,
+            browserStack: {
+                project: require('./package.json').name,
+                build: [
+                    'travis #',
+                    process.env.TRAVIS_JOB_NUMBER,
+                    (process.env.TRAVIS_PULL_REQUEST === 'false' ?
+                        '' :
+                        ', PR: #' + process.env.TRAVIS_PULL_REQUEST),
+                ].join(''),
+                timeout: 600,
+                // BrowserStack has a limit of 120 requests per minute. The default "request per second"
+                // strategy doesn't scale to so many browsers.
+                pollingTimeout: 10000,
             },
         });
     }
