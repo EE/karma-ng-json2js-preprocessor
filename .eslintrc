@@ -24,7 +24,7 @@
         "no-use-before-define": 0,
         "no-shadow": 0,
 
-        // Node.js/io.js
+        // Node.js
         "no-mixed-requires": 0,
 
         // Stylistic issues
