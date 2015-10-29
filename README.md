@@ -98,7 +98,7 @@ Automated tests are possible due to the courtesy of [BrowserStack](https://www.b
 ----
 
 ## Supported Node.js versions
-This project aims to support all Node.js LTS versions in the "active" phase (see [LTS README](https://github.com/nodejs/LTS/blob/master/README.md) for more details) as well as the latest stable Node.js. Today that means Node.js 0.12 & 4.x.
+This project aims to support all Node.js LTS versions in the "active" phase (see [LTS README](https://github.com/nodejs/LTS/blob/master/README.md) for more details) as well as the latest stable Node.js. Today that means Node.js 0.12, 4 & 5.
 
 ## Contributing
 
