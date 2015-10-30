@@ -168,9 +168,10 @@ module.exports = function (config) {
         //
         // Travis has headless Firefox so use Firefox here - it will work locally
         // as well as for pull requests from other remotes.
-        browsers: process.env.TRAVIS && process.env.BROWSER_STACK_USERNAME && process.env.BROWSER_STACK_ACCESS_KEY ?
-            Object.keys(customLaunchers) :
-            ['Firefox'],
+        browsers: process.env.TRAVIS && process.env.BROWSER_STACK_USERNAME &&
+            process.env.BROWSER_STACK_ACCESS_KEY ?
+                Object.keys(customLaunchers) :
+                ['Firefox'],
 
         // If browser does not capture in given timeout [ms], kill it
         captureTimeout: 5000,
@@ -197,8 +198,8 @@ module.exports = function (config) {
                         ', PR: #' + process.env.TRAVIS_PULL_REQUEST),
                 ].join(''),
                 timeout: 600,
-                // BrowserStack has a limit of 120 requests per minute. The default "request per second"
-                // strategy doesn't scale to so many browsers.
+                // BrowserStack has a limit of 120 requests per minute. The default
+                // "request per second" strategy doesn't scale to so many browsers.
                 pollingTimeout: 10000,
             },
         });

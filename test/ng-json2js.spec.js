@@ -1,6 +1,8 @@
+'use strict';
+
 /* global angular */
+
 describe('ng-json2js preprocessor', function () {
-    'use strict';
 
     beforeEach(module('test/fixtures/empty.json'));
     beforeEach(module('test/fixtures/complex.json'));
@@ -40,9 +42,10 @@ describe('ng-json2js preprocessor', function () {
 
     it('should allow accessing the json during configuration phase', function () {
         var injectedDuringConfig;
-        angular.module('testModule', ['test/fixtures/complex.json']).config(function (_testFixturesComplex_) {
-            injectedDuringConfig = _testFixturesComplex_;
-        });
+        angular.module('testModule', ['test/fixtures/complex.json'])
+            .config(function (_testFixturesComplex_) {
+                injectedDuringConfig = _testFixturesComplex_;
+            });
 
         inject(module('testModule'));
 

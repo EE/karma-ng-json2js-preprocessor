@@ -18,19 +18,6 @@ module.exports = function (grunt) {
             },
         },
 
-        jscs: {
-            all: {
-                src: [
-                    '*.js',
-                    'lib/**/*.js',
-                    'test/**/*.js',
-                ],
-                options: {
-                    config: '.jscsrc',
-                },
-            },
-        },
-
         jsonlint: {
             all: {
                 src: [
@@ -65,7 +52,6 @@ module.exports = function (grunt) {
 
     grunt.registerTask('lint', [
         'eslint',
-        'jscs',
         'jsonlint',
     ]);
 
