@@ -71,6 +71,13 @@ module.exports = function (config) {
             os_version: '8.3',
             real_mobile: 'false',
         },
+        BS_iOS_9: {
+            base: 'BrowserStack',
+            device: 'iPhone 6S',
+            os: 'ios',
+            os_version: '9.0',
+            real_mobile: 'false',
+        },
         BS_Android_4_1: {
             base: 'BrowserStack',
             browser: 'Android Browser',
