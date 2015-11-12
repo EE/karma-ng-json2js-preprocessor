@@ -103,7 +103,7 @@ module.exports = function (config) {
             base: 'BrowserStack',
             browser: 'Android Browser',
             os: 'android',
-            os_version: '5.0',
+            os_version: '4.4',
             real_mobile: 'false',
         },
         BS_Windows_Phone: {
