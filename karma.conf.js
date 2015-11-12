@@ -11,23 +11,23 @@ module.exports = function (config) {
         BS_Chrome: {
             base: 'BrowserStack',
             browser: 'chrome',
-            browser_version: '44.0',
+            browser_version: '46.0',
             os: 'Windows',
-            os_version: '8.1',
+            os_version: '10',
         },
         BS_Firefox: {
             base: 'BrowserStack',
             browser: 'firefox',
-            browser_version: '39.0',
+            browser_version: '42.0',
             os: 'Windows',
-            os_version: '8.1',
+            os_version: '10',
         },
         BS_Safari: {
             base: 'BrowserStack',
             browser: 'safari',
-            browser_version: '8.0',
+            browser_version: '9.0',
             os: 'OS X',
-            os_version: 'Yosemite',
+            os_version: 'El Capitan',
         },
         BS_IE_9: {
             base: 'BrowserStack',
@@ -48,12 +48,12 @@ module.exports = function (config) {
             browser: 'ie',
             browser_version: '11.0',
             os: 'Windows',
-            os_version: '8.1',
+            os_version: '10',
         },
         BS_Edge: {
             base: 'BrowserStack',
             browser: 'edge',
-            browser_version: '0.11',
+            browser_version: '12.0',
             os: 'Windows',
             os_version: '10',
         },
@@ -92,11 +92,11 @@ module.exports = function (config) {
             os_version: '4.3',
             real_mobile: 'false',
         },
-        BS_Android_5_0: {
+        BS_Android_Chrome: {
             base: 'BrowserStack',
             browser: 'Android Browser',
             os: 'android',
-            os_version: '4.4',
+            os_version: '5.0',
             real_mobile: 'false',
         },
         BS_Windows_Phone: {
