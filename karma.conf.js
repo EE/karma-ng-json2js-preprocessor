@@ -11,14 +11,14 @@ module.exports = function (config) {
         BS_Chrome: {
             base: 'BrowserStack',
             browser: 'chrome',
-            browser_version: '46.0',
+            browser_version: '52.0',
             os: 'Windows',
             os_version: '10',
         },
         BS_Firefox: {
             base: 'BrowserStack',
             browser: 'firefox',
-            browser_version: '42.0',
+            browser_version: '48.0',
             os: 'Windows',
             os_version: '10',
         },
@@ -53,7 +53,7 @@ module.exports = function (config) {
         BS_Edge: {
             base: 'BrowserStack',
             browser: 'edge',
-            browser_version: '12.0',
+            browser_version: '14.0',
             os: 'Windows',
             os_version: '10',
         },
