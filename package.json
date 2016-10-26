@@ -49,7 +49,7 @@
     "test": "grunt"
   },
   "engines": {
-    "node": ">=4.4 <6 || >=6.3"
+    "node": ">=4.4 <6 || >=6.9"
   },
   "license": "MIT"
 }

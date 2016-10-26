@@ -3,6 +3,7 @@ sudo: false
 node_js:
   - '4'
   - '6'
+  - '7'
 env:
   global:
     - secure: NyTJRyVlZACJzp4rU6O9abqm2Z+P3x6mhFne8B9iqflt+9pesdT9Jz/a5oi8+hjA1n+tRADkrXjGz8GPgFCI1YP6+RgOQjGYnf3F/7/efbHjGrtTQPKq6Fu07upN9B/yXEsFML05abloiJvPLeHvDS9xY9qsgkDzvikdjrUleIs=
