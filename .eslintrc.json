@@ -10,14 +10,12 @@
     "rules": {
         // Rules are divided into sections from http://eslint.org/docs/rules/
 
+        // TODO stop overwriting the following rules once support for Node.js 4 is dropped
+        // Stylistic issues
+        "id-blacklist": ["error", "event"],
+
         // ECMAScript 6
-        // TODO rewrite to ES6 and remove those exceptions
-        "no-var": 0,
-        "object-shorthand": 0,
-        "prefer-arrow-callback": 0,
-        "prefer-const": 0,
-        "prefer-spread": 0,
-        "prefer-reflect": 0,
-        "prefer-template": 0
+        "prefer-rest-params": "off",
+        "prefer-spread": "off"
     }
 }

@@ -1,13 +1,13 @@
 'use strict';
 
-var _ = require('lodash');
+const _ = require('lodash');
 
 module.exports = function (config) {
-    var preprocessors = config.preprocessors;
+    const preprocessors = config.preprocessors;
     // put JSON data into a mock
     preprocessors['**/*.json'] = 'ng-json2js';
 
-    var customLaunchers = {
+    const customLaunchers = {
         BS_Chrome: {
             base: 'BrowserStack',
             browser: 'chrome',
@@ -117,7 +117,7 @@ module.exports = function (config) {
     };
 
 
-    var settings = {
+    const settings = {
         frameworks: ['jasmine'],
 
         // base path, that will be used to resolve files and exclude
@@ -125,8 +125,8 @@ module.exports = function (config) {
 
         // list of files / patterns to load in the browser
         files: [
-            'test/vendor/angular.js',
-            'test/vendor/angular-mocks.js',
+            'node_modules/angular/angular.js',
+            'node_modules/angular-mocks/angular-mocks.js',
             'test/fixtures/*.json',
             'test/ng-json2js.spec.js',
         ],
@@ -134,7 +134,7 @@ module.exports = function (config) {
         // list of files to exclude
         exclude: [],
 
-        preprocessors: preprocessors,
+        preprocessors,
 
         plugins: config.plugins.concat([
             require('./lib/index.js'),
@@ -160,7 +160,7 @@ module.exports = function (config) {
         // enable / disable watching file and executing tests whenever any file changes
         autoWatch: true,
 
-        customLaunchers: customLaunchers,
+        customLaunchers,
 
         // Start these browsers, currently available:
         // - Chrome
@@ -202,7 +202,7 @@ module.exports = function (config) {
                     process.env.TRAVIS_JOB_NUMBER,
                     (process.env.TRAVIS_PULL_REQUEST === 'false' ?
                         '' :
-                        ', PR: #' + process.env.TRAVIS_PULL_REQUEST),
+                        `, PR: #${ process.env.TRAVIS_PULL_REQUEST }`),
                 ].join(''),
                 timeout: 600,
                 // BrowserStack has a limit of 120 requests per minute. The default
