@@ -4,8 +4,11 @@ const _ = require('lodash');
 
 module.exports = function (config) {
     const preprocessors = config.preprocessors;
+
     // put JSON data into a mock
     preprocessors['**/*.json'] = 'ng-json2js';
+
+    preprocessors['test/**/*.spec.js'] = 'babel';
 
     const customLaunchers = {
         BS_Chrome: {
@@ -115,6 +118,19 @@ module.exports = function (config) {
 
         // base path, that will be used to resolve files and exclude
         basePath: '',
+
+        babelPreprocessor: {
+            options: {
+                presets: ['es2015'],
+                sourceMap: 'inline',
+            },
+            filename(file) {
+                return file.originalPath.replace(/\.js$/, '.es5.js');
+            },
+            sourceFileName(file) {
+                return file.originalPath;
+            },
+        },
 
         // list of files / patterns to load in the browser
         files: [
