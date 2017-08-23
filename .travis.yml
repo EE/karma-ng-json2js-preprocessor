@@ -1,4 +1,5 @@
 language: node_js
+dist: trusty
 sudo: false
 node_js:
   - '4'
@@ -8,13 +9,6 @@ env:
   global:
     - secure: NyTJRyVlZACJzp4rU6O9abqm2Z+P3x6mhFne8B9iqflt+9pesdT9Jz/a5oi8+hjA1n+tRADkrXjGz8GPgFCI1YP6+RgOQjGYnf3F/7/efbHjGrtTQPKq6Fu07upN9B/yXEsFML05abloiJvPLeHvDS9xY9qsgkDzvikdjrUleIs=
     - secure: di2dAKlPdcQ2yNo7YMIdqJbfk4KhYknh6g0pGF0i53tszFoBRVyAGb1uI7ZlrHIBOnOSi5XnLuoocEKscAToZjAANXYIcIxV29lXADkrDXXDqSaXWuvtGPadFRxeAuk07VEukj6xNEr/eSAuGyRb9K4HURSmEvWlUMMTMGOIB4Y=
-    - CXX=g++-4.8
-addons:
-  apt:
-    sources:
-      - ubuntu-toolchain-r-test
-    packages:
-      - g++-4.8
 before_install:
   # Log HTTP requests
   - npm config set loglevel http
