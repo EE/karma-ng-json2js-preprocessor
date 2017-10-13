@@ -103,7 +103,7 @@ This project aims to support all supported Node.js LTS versions (see [LTS README
 
 ## Contributing
 
-Before sending a pull request, run `grunt` in terminal to make sure all tests pass. To continuously run tests during development, run `karma start`.
+Before sending a pull request, run `npm test` in terminal to make sure all tests pass. To continuously run tests during development, run `karma start`.
 
 
 For more information on Karma see the [homepage].
