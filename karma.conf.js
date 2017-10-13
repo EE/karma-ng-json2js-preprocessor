@@ -102,14 +102,6 @@ module.exports = function (config) {
             os_version: '4.4',
             real_mobile: 'false',
         },
-        BS_Windows_Phone: {
-            base: 'BrowserStack',
-            browser: 'IE Mobile',
-            device: 'Nokia Lumia 630',
-            os: 'winphone',
-            os_version: '8.1',
-            real_mobile: 'false',
-        },
     };
 
 
