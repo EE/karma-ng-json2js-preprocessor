@@ -1,19 +1,10 @@
 language: node_js
-dist: trusty
 sudo: false
 node_js:
-  - '4'
   - '6'
   - '8'
+  - '10'
 env:
   global:
     - secure: NyTJRyVlZACJzp4rU6O9abqm2Z+P3x6mhFne8B9iqflt+9pesdT9Jz/a5oi8+hjA1n+tRADkrXjGz8GPgFCI1YP6+RgOQjGYnf3F/7/efbHjGrtTQPKq6Fu07upN9B/yXEsFML05abloiJvPLeHvDS9xY9qsgkDzvikdjrUleIs=
     - secure: di2dAKlPdcQ2yNo7YMIdqJbfk4KhYknh6g0pGF0i53tszFoBRVyAGb1uI7ZlrHIBOnOSi5XnLuoocEKscAToZjAANXYIcIxV29lXADkrDXXDqSaXWuvtGPadFRxeAuk07VEukj6xNEr/eSAuGyRb9K4HURSmEvWlUMMTMGOIB4Y=
-before_install:
-  # Log HTTP requests
-  - npm config set loglevel http
-  # Set up xvfb for headless Firefox testing
-  - export DISPLAY=:99.0
-  - sh -e /etc/init.d/xvfb start
-install:
-  - time npm install
