@@ -48,9 +48,10 @@ module.exports = function (config) {
         },
         BS_iOS_10: {
             base: 'BrowserStack',
-            device: 'iPhone SE',
+            device: 'iPhone 7',
             os: 'ios',
             os_version: '10.3',
+            real_mobile: 'true',
         },
         BS_iOS_11: {
             base: 'BrowserStack',
