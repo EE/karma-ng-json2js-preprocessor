@@ -145,6 +145,10 @@ module.exports = function (config) {
         // possible values: dots || progress || growl
         reporters: process.env.TRAVIS ? 'dots' : 'progress',
 
+        // This domain resolves to 127.0.0.1 but is required for iOS
+        // testing as those devices don't allow to re-map localhost.
+        hostname: 'bs-local.com',
+
         // web server port
         port: 8080,
 
