@@ -66,6 +66,10 @@ module.exports = function (config) {
             os_version: '8.0',
             real_mobile: 'true',
         },
+        ChromeHeadlessNoSandbox: {
+            base: 'ChromeHeadless',
+            flags: ['--no-sandbox'],
+        },
     };
 
 
@@ -147,12 +151,16 @@ module.exports = function (config) {
         // - PhantomJS
         // - IE (only Windows)
         //
-        // Travis has headless Firefox so use Firefox here - it will work locally
+        // Travis has headless Firefox & Chrome so use them here - they will work locally
         // as well as for pull requests from other remotes.
         browsers: process.env.TRAVIS && process.env.BROWSER_STACK_USERNAME &&
             process.env.BROWSER_STACK_ACCESS_KEY ?
             Object.keys(customLaunchers) :
-            ['Firefox'],
+            [
+                // Chrome doesn't work on Travis with sandbox enabled.
+                process.env.TRAVIS ? 'ChromeHeadlessNoSandbox' : 'ChromeHeadless',
+                'FirefoxHeadless',
+            ],
 
         // If browser does not capture in given timeout [ms], kill it
         captureTimeout: 5000,
