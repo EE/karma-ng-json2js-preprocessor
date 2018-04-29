@@ -85,9 +85,8 @@ describe('me', function(){
 This package is tested against the following browsers:
 
 * Firefox, Chrome, Edge & Safari: latest version
-* IE 9-11
+* IE 11
 * Chrome for Android: latest version
-* Android 4.1+
 * iOS: latest two versions
 
 Other browsers and versions might work but there's no guarantee.
