@@ -178,8 +178,8 @@ module.exports = function (config) {
         // as well as for pull requests from other remotes.
         browsers: process.env.TRAVIS && process.env.BROWSER_STACK_USERNAME &&
             process.env.BROWSER_STACK_ACCESS_KEY ?
-                Object.keys(customLaunchers) :
-                ['Firefox'],
+            Object.keys(customLaunchers) :
+            ['Firefox'],
 
         // If browser does not capture in given timeout [ms], kill it
         captureTimeout: 5000,
