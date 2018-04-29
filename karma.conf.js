@@ -77,7 +77,12 @@ module.exports = function (config) {
 
         babelPreprocessor: {
             options: {
-                presets: ['es2015'],
+                presets: [
+                    ['@babel/preset-env', {
+                        modules: false,
+                        useBuiltIns: 'entry',
+                    }],
+                ],
                 sourceMap: 'inline',
             },
             filename(file) {
