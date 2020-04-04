@@ -73,7 +73,6 @@ module.exports = function (config) {
         },
     };
 
-
     const settings = {
         frameworks: ['jasmine'],
 
@@ -83,10 +82,13 @@ module.exports = function (config) {
         babelPreprocessor: {
             options: {
                 presets: [
-                    ['@babel/preset-env', {
-                        modules: false,
-                        useBuiltIns: 'entry',
-                    }],
+                    [
+                        '@babel/preset-env',
+                        {
+                            modules: false,
+                            useBuiltIns: 'entry',
+                        },
+                    ],
                 ],
                 sourceMap: 'inline',
             },
@@ -111,9 +113,7 @@ module.exports = function (config) {
 
         preprocessors,
 
-        plugins: config.plugins.concat([
-            require('./lib/index.js'),
-        ]),
+        plugins: config.plugins.concat([require('./lib/index.js')]),
 
         // test results reporter to use
         // possible values: dots || progress || growl
@@ -154,14 +154,18 @@ module.exports = function (config) {
         //
         // Travis has headless Firefox & Chrome so use them here - they will work locally
         // as well as for pull requests from other remotes.
-        browsers: process.env.TRAVIS && process.env.BROWSER_STACK_USERNAME &&
-            process.env.BROWSER_STACK_ACCESS_KEY ?
-            Object.keys(customLaunchers) :
-            [
-                // Chrome doesn't work on Travis with sandbox enabled.
-                process.env.TRAVIS ? 'ChromeHeadlessNoSandbox' : 'ChromeHeadless',
-                'FirefoxHeadless',
-            ],
+        browsers:
+            process.env.TRAVIS &&
+            process.env.BROWSER_STACK_USERNAME &&
+            process.env.BROWSER_STACK_ACCESS_KEY
+                ? Object.keys(customLaunchers)
+                : [
+                      // Chrome doesn't work on Travis with sandbox enabled.
+                      process.env.TRAVIS
+                          ? 'ChromeHeadlessNoSandbox'
+                          : 'ChromeHeadless',
+                      'FirefoxHeadless',
+                  ],
 
         // If browser does not capture in given timeout [ms], kill it
         captureTimeout: 5000,
@@ -183,9 +187,9 @@ module.exports = function (config) {
                 build: [
                     'travis #',
                     process.env.TRAVIS_JOB_NUMBER,
-                    (process.env.TRAVIS_PULL_REQUEST === 'false' ?
-                        '' :
-                        `, PR: #${ process.env.TRAVIS_PULL_REQUEST }`),
+                    process.env.TRAVIS_PULL_REQUEST === 'false'
+                        ? ''
+                        : `, PR: #${process.env.TRAVIS_PULL_REQUEST}`,
                 ].join(''),
                 timeout: 600,
                 // BrowserStack has a limit of 120 requests per minute. The default
