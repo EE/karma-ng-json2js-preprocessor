@@ -54,7 +54,7 @@
         "test": "eslint . && jsonlint-cli '{lib,test}/**/*.json' '*.json' && karma start --single-run"
     },
     "engines": {
-        "node": ">=4.4 <6 || >=6.9"
+        "node": ">=10"
     },
     "husky": {
         "hooks": {
