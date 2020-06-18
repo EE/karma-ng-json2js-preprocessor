@@ -30,9 +30,9 @@
         "angular-mocks": "1.8.0",
         "eslint": "7.2.0",
         "eslint-config-mgol": "0.0.47",
+        "glob": "7.1.6",
         "husky": "4.2.5",
         "jasmine-core": "3.5.0",
-        "jsonlint-cli": "1.0.1",
         "karma": "5.1.0",
         "karma-babel-preprocessor": "8.0.1",
         "karma-browserstack-launcher": "1.6.0",
@@ -41,6 +41,7 @@
         "karma-jasmine": "3.3.1",
         "lint-staged": "10.2.11",
         "lodash": "4.17.15",
+        "parse-json": "5.0.0",
         "prettier": "2.0.5"
     },
     "peerDependencies": {
@@ -49,7 +50,7 @@
     "scripts": {
         "prettier-check": "prettier --check \"**/*.{json,js,yml,yaml,md}\"",
         "prettier-format": "prettier --write \"**/*.{json,js,yml,yaml,md}\"",
-        "test": "eslint . && jsonlint-cli '{lib,test}/**/*.json' '*.json' && npm run prettier-check && karma start --single-run"
+        "test": "eslint . && test/bin/jsonlint-cli.js '{lib,test}/**/*.json' '*.json' && npm run prettier-check && karma start --single-run"
     },
     "engines": {
         "node": ">=10"
