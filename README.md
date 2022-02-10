@@ -2,6 +2,8 @@
 
 > Preprocessor for converting JSON files to [AngularJS](http://angularjs.org/) constants.
 
+**NOTE: `karma-ng-json2js-preprocessor` is no longer maintained because AngularJS reached its End-of-Life.**
+
 ## Installation
 
 The easiest way is to keep `karma-ng-json2js-preprocessor` as a devDependency in your `package.json`. You can simple do it by:
